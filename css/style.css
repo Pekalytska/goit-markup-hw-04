@@ -7,8 +7,10 @@
   --logo-header-color: #000000;
   --white-color: #ffffff;
   --secondary-white-color: rgba(255, 255, 255, 0.6);
+  --header-border-color: #ececec;
   --main-backgroung-color: #2f303a;
   --secondary-background-color: #f5f4fa;
+  --hero-gradient-color: rgba(47, 48, 58, 0.4);
   --icon-background-color: #AFB1B8;
 }
 body {
@@ -72,7 +74,7 @@ img {
 
 /* ====header==== */
 .header {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--header-border-color);
 }
 
 .header > .container {
@@ -159,12 +161,14 @@ fill: var(--text-color);
 /* ========Studio======== */
 
 /* ====hero==== */
-.hero {
+.hero{
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
 
   background-color: var(--main-backgroung-color);
+  background-image: linear-gradient(var(--hero-gradient-color), var(--hero-gradient-color)), url("../images/hero.jpg");
+  background-size: cover;
 }
 
 .hero-title {
@@ -230,6 +234,7 @@ fill: var(--text-color);
     padding: 25px 100px;
 
  background-color: var(--secondary-background-color);
+    border-radius: 4px;
 }
 
 .benefits-title {
@@ -317,7 +322,7 @@ fill: var(--text-color);
     border-radius: 50%;
 }
 
-.social-emblem{
+.emblem{
     fill: var(--icon-background-color);
 }
 
@@ -329,6 +334,33 @@ fill: var(--text-color);
 .social-link:hover .social-emblem,
 .social-link:focus .social-emblem{
  fill: var(--white-color);
+}
+
+/* ====clients==== */
+.clients-list{
+ display: flex;
+ margin-left: -30px;
+}
+
+.clients-item{
+    margin-left: 30px;
+}
+
+.clients-link{
+    display: flex;
+    border: 1px solid var(--icon-background-color);
+    border-radius: 4px;
+    padding: 16px 32px;
+}
+
+.clients-link:hover,
+.clients-link:focus{
+    border-color: var(--accent-color);
+}
+
+.clients-link:hover .clients-emblem,
+.clients-link:focus .clients-emblem{
+    fill: var(--accent-color);
 }
 
 /* ========Portfolio======== */
@@ -403,9 +435,14 @@ fill: var(--text-color);
   background-color: var(--main-backgroung-color);
 }
 
+.footer > .container{
+ display: flex;
+}
+
 .footer-logo {
   display: inline-block;
   margin-bottom: 20px;
+  margin-right: 156px;
 
   color: var(--white-color);
 }
@@ -422,4 +459,30 @@ fill: var(--text-color);
 
 .address-color {
   color: var(--white-color);
+}
+
+.join{
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--white-color);
+}
+
+.footer .social-list-icon{
+    margin-top: 20px;
+}
+
+.footer .social-link{
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer .social-link:hover,
+.footer .social-link:focus{
+ background-color: var(--accent-color);
+}
+
+.footer .emblem{
+    fill: var(--white-color);
 }
